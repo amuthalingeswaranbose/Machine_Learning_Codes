@@ -41,10 +41,10 @@
      * Univariate Logistic Regression
      * Bivariate Logistic Regression
   
-   ## Univariate Logistic Regression
+   ### I. Univariate Logistic Regression
       Univariate Logistic Regression use a one input data for fit a data. 
   
-   ## Formulas,
+   ### Formulas,
       1. y_hat = (m * x) + c (m - slope, c - intercept) # we use linear eqation
       2. sigmoid of y_hat = 1 / (1 + np.exp(-y_pred))  
         * loss = -(ylog(sigmoid_of_y_pred) + (1-y)log(1-sigmoid_of_y_pred))
@@ -54,15 +54,15 @@
         * update slope, m = m - (learning_rate * dm)
         * update intercept, b = b - (learning_rate * db)
 
-   # NoteBook
+   ### NoteBook
       1. use univariate-class-test.ipynb notebook for understand Linear Regression.
 
  
-   ## Bivariate Logistic Regression
+   ### II.Bivariate Logistic Regression
       Univariate Logistic Regression use a more than one input data for fit a data. 
   
-   ## Formulas,
-      1. y_hat = (m1 * x1) + (m2 * x2) + c (m1 - slope1, m2 - slope2, c - intercept) # we use linear eqation
+   ### Formulas,
+      1. y_hat = (m1 * x1) + (m2 * x2) + c (m1 - slope1, m2 - slope2, c - intercept, x1 - input_data1, x2 - input_data2, y - actual_ouput) # we use linear eqation
       2. sigmoid of y_hat = 1 / (1 + exp(-y_pred))  
         * loss = -(ylog(sigmoid_of_y_pred) + (1-y)log(1-sigmoid_of_y_pred))
       3. upate slope and intercept and minimize the loss
@@ -73,7 +73,7 @@
         * update slope, m2 = m2 - (learning_rate * dm2)
         * update intercept, b = b - (learning_rate * db)
 
-   # NoteBook
+   ### NoteBook
       1. use bivariate-class.ipynb notebook for understand Linear Regression.
  
     

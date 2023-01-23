@@ -2,9 +2,9 @@
   this repo contains Linear Regression, Bi-variate Logistic Regression and Uni-variate Logistic Regression class implementaion from scratch (numpy) code, train and test notebook.
   
   Machine Learning Algorithms,
-    1. Linear Regression.
-    2. Unvariate Logistic Regression.
-    3. Bivariate Logistic Regression.
+  1. Linear Regression.
+  2. Unvariate Logistic Regression.
+  3. Bivariate Logistic Regression.
   
 # 1. Linear Regression 
   Linear Regression is supervised learning algorithm. this algorithm is mainly used for predictive analysis and modeling. we use old datas for train the algorithm and predict the future. 

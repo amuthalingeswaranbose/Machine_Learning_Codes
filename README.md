@@ -1,4 +1,4 @@
-# Machine_Learning_Codes
+# Machine Learning Codes
   this repo contains Linear Regression, Bi-variate Logistic Regression and Uni-variate Logistic Regression class implementaion from scratch (numpy) code, train and test notebook.
   
   ## Machine Learning Algorithms,
@@ -25,7 +25,7 @@
         * update slope, m = m - (learning_rate * dm)
         * update intercept, b = m - (learning_rate * db)
         
-  # Operation.
+  # NoteBook
     1. use linear_regression_class_test.ipynb notebook for understand Linear Regression.
     
     
@@ -41,40 +41,40 @@
      * Univariate Logistic Regression
      * Bivariate Logistic Regression
   
-    ## Univariate Logistic Regression
+   ## Univariate Logistic Regression
       Univariate Logistic Regression use a one input data for fit a data. 
   
-      ## Formulas,
-        1. y_hat = (m * x) + c (m - slope, c - intercept) # we use linear eqation
-        2. sigmoid of y_hat = 1 / (1 + np.exp(-y_pred))  
-            * loss = -(ylog(sigmoid_of_y_pred) + (1-y)log(1-sigmoid_of_y_pred))
-        3. upate slope and intercept and minimize the loss
-            * find derivative of m, dm =  ((sigmoid_of_y_pred - y)* x)
-            * find derivative of b, db =  (sigmoid_of_y_pred - y)
-            * update slope, m = m - (learning_rate * dm)
-            * update intercept, b = b - (learning_rate * db)
+   ## Formulas,
+      1. y_hat = (m * x) + c (m - slope, c - intercept) # we use linear eqation
+      2. sigmoid of y_hat = 1 / (1 + np.exp(-y_pred))  
+        * loss = -(ylog(sigmoid_of_y_pred) + (1-y)log(1-sigmoid_of_y_pred))
+      3. upate slope and intercept and minimize the loss
+        * find derivative of m, dm =  ((sigmoid_of_y_pred - y)* x)
+        * find derivative of b, db =  (sigmoid_of_y_pred - y)
+        * update slope, m = m - (learning_rate * dm)
+        * update intercept, b = b - (learning_rate * db)
 
-      # Operation.
-        1. use univariate-class-test.ipynb notebook for understand Linear Regression.
+   # NoteBook
+      1. use univariate-class-test.ipynb notebook for understand Linear Regression.
 
  
-    ## Bivariate Logistic Regression
+   ## Bivariate Logistic Regression
       Univariate Logistic Regression use a more than one input data for fit a data. 
   
-      ## Formulas,
-        1. y_hat = (m1 * x1) + (m2 * x2) + c (m1 - slope1, m2 - slope2, c - intercept) # we use linear eqation
-        2. sigmoid of y_hat = 1 / (1 + exp(-y_pred))  
-            * loss = -(ylog(sigmoid_of_y_pred) + (1-y)log(1-sigmoid_of_y_pred))
-        3. upate slope and intercept and minimize the loss
-            * find derivative of m1, dm1 =  ((sigmoid_of_y_pred - y)* x1)
-            * find derivative of m2, dm2 =  ((sigmoid_of_y_pred - y)* x2)
-            * find derivative of b, db =  (sigmoid_of_y_pred - y)
-            * update slope, m1 = m1 - (learning_rate * dm1)
-            * update slope, m2 = m2 - (learning_rate * dm2)
-            * update intercept, b = b - (learning_rate * db)
+   ## Formulas,
+      1. y_hat = (m1 * x1) + (m2 * x2) + c (m1 - slope1, m2 - slope2, c - intercept) # we use linear eqation
+      2. sigmoid of y_hat = 1 / (1 + exp(-y_pred))  
+        * loss = -(ylog(sigmoid_of_y_pred) + (1-y)log(1-sigmoid_of_y_pred))
+      3. upate slope and intercept and minimize the loss
+        * find derivative of m1, dm1 =  ((sigmoid_of_y_pred - y)* x1)
+        * find derivative of m2, dm2 =  ((sigmoid_of_y_pred - y)* x2)
+        * find derivative of b, db =  (sigmoid_of_y_pred - y)
+        * update slope, m1 = m1 - (learning_rate * dm1)
+        * update slope, m2 = m2 - (learning_rate * dm2)
+        * update intercept, b = b - (learning_rate * db)
 
-      # Operation.
-        1. use bivariate-class.ipynb notebook for understand Linear Regression.
+   # NoteBook
+      1. use bivariate-class.ipynb notebook for understand Linear Regression.
  
     
       

@@ -1,2 +1,4 @@
 # Machine_Learning_Codes
-Machine learning codes
+  this repo contains Linear Regression, Bi-variate Logistic Regression and Uni-variate Logistic Regression Class implementaion from scratch (numpy) file and testing notebook.
+  
+

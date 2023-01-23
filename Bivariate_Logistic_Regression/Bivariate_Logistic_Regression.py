@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class Bivariate_Logistic_Regression:
      
     def __init__(self, slope1=1, slope2=1, intercept=1, learning_rate=0.001, epochs=1000):
@@ -8,7 +7,6 @@ class Bivariate_Logistic_Regression:
         # initialize
         self.slope1 = slope1
         self.slope2 = slope2
-        #self.slope = np.ones(slope, dtype = int)
         self.intercept = intercept
         self.learning_rate = learning_rate
         self.epochs = epochs
@@ -27,7 +25,6 @@ class Bivariate_Logistic_Regression:
             for x, y in zip(X_train, y_train):                
             
                 # y = (m * x) + c - linear eqation
-                #y_pred = (self.slope * x) + self.intercept 
                 y_pred = (self.slope1 * x[0]) + (self.slope2 * x[1]) + self.intercept 
                 
                 # Sigmoid function

@@ -1,6 +1,11 @@
 # Machine Learning Codes
   this repo contains Linear Regression, Bi-variate Logistic Regression and Uni-variate Logistic Regression class implementaion from scratch (numpy) code, train and test notebook.
   
+  ## Install Required Libraries
+  1. NumPy - pip install numpy
+  2. Matplotlib - pip install matplotlib
+  3. random  
+  
   ## Machine Learning Algorithms,
   1. Linear Regression.
   2. Logistic Regression
@@ -25,13 +30,14 @@
         * update slope, m = m - (learning_rate * dm)
         * update intercept, b = m - (learning_rate * db)
         
-  # NoteBook
-    1. use linear_regression_class_test.ipynb notebook for understand Linear Regression.
-    
-    
-    
+  # Linear Regression Files
+  
+    1. Linear_Regression.py - contains Linear Regression Class and methods (fit, pred).
+    2. linear_regression_class_test.ipynb - contains the examples of random value generate, fit training data and find pred and pred_prob of given testing samples.
+
   # 2. Logistic Regression 
   Linear Regression is supervised learning algorithm. this algorithm is mainly used for classification problems. if we have a large dataset we can use this logistic regression for categorize. 
+  
   ## Logistic Regression Application,
     1. cancer type classification.
     2. patient will have heart attack or not.
@@ -54,8 +60,10 @@
         * update slope, m = m - (learning_rate * dm)
         * update intercept, b = b - (learning_rate * db)
 
-   ### NoteBook
-      1. use univariate-class-test.ipynb notebook for understand Linear Regression.
+   ### Univariate Logistic Regression Files
+  
+    1. Univariate_Logistic_Regression.py - contains Univariate Logistic Regression Class and methods (fit, pred, pred_prob).
+    2. univariate-class-test.ipynb - contains the examples of random value generate, fit training data and find pred and pred_prob of given testing samples.
 
  
    ### II.Bivariate Logistic Regression
@@ -73,8 +81,9 @@
         * update slope, m2 = m2 - (learning_rate * dm2)
         * update intercept, b = b - (learning_rate * db)
 
-   ### NoteBook
-      1. use bivariate-class.ipynb notebook for understand Linear Regression.
- 
-    
+   ### Bivariate Logistic Regressionn Files
+  
+    1. Bivariate_Logistic_Regression.py - contains Bivariate Logistic Regression Class and methods (fit, pred, pred_prob).
+    2. bivariate-class.ipynb - contains the examples of random value generate, fit training data and find pred and pred_prob of given testing samples.
+
       

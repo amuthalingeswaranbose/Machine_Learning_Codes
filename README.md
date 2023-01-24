@@ -46,6 +46,7 @@
   ## Types of Logistic Regression
      * Univariate Logistic Regression
      * Bivariate Logistic Regression
+     * Multivariate Logistic Regression
   
    ### I. Univariate Logistic Regression
       Univariate Logistic Regression use a one input data for fit a data. 

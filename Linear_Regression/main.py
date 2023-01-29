@@ -9,7 +9,7 @@ class test(unittest.TestCase):
     """
 
     # create and configure logger
-    logging.basicConfig(filename='debug.log', format="%(asctime)s %(message)s", filemode='w')
+    logging.basicConfig(filename='linear_debug.log', format="%(asctime)s %(message)s", filemode='w')
 
     # creating an object
     logger = logging.getLogger()
@@ -40,7 +40,7 @@ class test(unittest.TestCase):
                         118, 157, 119, 158, 132, 72, 9, 148, 39, 151, 77, 6, 74,
                         19, 114, 20, 146, 80, 63, 186, 141, 36, 46, 88, 54, 163,
                         131, 48, 127, 16, 128])
-    # y_train
+
     y_train = np.array([-127995, -29000, -11998, -41993, -204001, -63997, -166993,
                         -162992, -56009, -177995, -90998, -16995, -22005, -74997,
                         -176997, -189001, -105007, -190005, -148998, -112996, -85006,
@@ -70,7 +70,7 @@ class test(unittest.TestCase):
                         -17005, -116001, -30006, -138008, -72998, -59992, -178993,
                         -150003, -36006, -52006, -94000, -54008, -171005, -122005,
                         -49991, -122997, -7010, -121010])
-    # actaul y_hat
+
     y_hat = [-122669.93370857342,
              -30571.789469245246,
              -13121.61477126728,
@@ -578,10 +578,10 @@ class test(unittest.TestCase):
         print("\nFinish fit-7 test\n")
         self.logger.debug("\nFinish fit-7 test\n")
         
-    def test_8_fit(self):
+    def test_1_pred(self):
 
-        print("Start fit-8 test\n")
-        self.logger.debug("Start fit-8 test\n")
+        print("Start pred-1 test\n")
+        self.logger.debug("Start pred-1 test\n")
 
         pred_yhat = self.linear_test.pred(
                 self.x_train,
@@ -591,13 +591,13 @@ class test(unittest.TestCase):
 
         self.assertEqual(pred_yhat, self.y_hat)  # slope
 
-        print("\nFinish fit-8 test\n")
-        self.logger.debug("\nFinish fit-8 test\n")
+        print("\nFinish pred-1 test\n")
+        self.logger.debug("\nFinish pred-1 test\n")
         
-    def test_9_fit(self):
+    def test_2_pred(self):
 
-        print("Start fit-9 test\n")
-        self.logger.debug("Start fit-9 test\n")
+        print("Start pred-2 test\n")
+        self.logger.debug("Start pred-2 test\n")
 
         pred_yhat = self.linear_test.pred(
                 self.x_train,
@@ -607,12 +607,12 @@ class test(unittest.TestCase):
 
         self.assertEqual(pred_yhat, self.y_hat)  # slope
 
-        print("\nFinish fit-9 test\n")
-        self.logger.debug("\nFinish fit-9 test\n")
+        print("\nFinish pred-2 test\n")
+        self.logger.debug("\nFinish pred-2 test\n")
 
-    def test_10_fit(self):
-        print("Start fit-10 test\n")
-        self.logger.debug("Start fit-10 test\n")
+    def test_3_pred(self):
+        print("Start pred-3 test\n")
+        self.logger.debug("Start pred-3 test\n")
 
         pred_yhat = self.linear_test.pred(
             [1],
@@ -622,12 +622,12 @@ class test(unittest.TestCase):
 
         self.assertEqual(pred_yhat, self.y_hat)  # slope
 
-        print("\nFinish fit-10 test\n")
-        self.logger.debug("\nFinish fit-10 test\n")
+        print("\nFinish pred-3 test\n")
+        self.logger.debug("\nFinish pred-3 test\n")
 
-    def test_11_fit(self):
-        print("Start fit-11 test\n")
-        self.logger.debug("Start fit-11 test\n")
+    def test_4_pred(self):
+        print("Start pred-4 test\n")
+        self.logger.debug("Start pred-4 test\n")
 
         pred_yhat = self.linear_test.pred(
             tuple([1]),
@@ -637,12 +637,12 @@ class test(unittest.TestCase):
 
         self.assertEqual(pred_yhat, self.y_hat)  # slope
 
-        print("\nFinish fit-11 test\n")
-        self.logger.debug("\nFinish fit-11 test\n")
+        print("\nFinish pred-4 test\n")
+        self.logger.debug("\nFinish pred-4 test\n")
 
-    def test_12_fit(self):
-        print("Start fit-12 test\n")
-        self.logger.debug("Start fit-12 test\n")
+    def test_5_pred(self):
+        print("Start pred-5 test\n")
+        self.logger.debug("Start pred-5 test\n")
 
         pred_yhat = self.linear_test.pred(
             1,
@@ -652,8 +652,8 @@ class test(unittest.TestCase):
 
         self.assertEqual(pred_yhat, self.y_hat)  # slope
 
-        print("\nFinish fit-12 test\n")
-        self.logger.debug("\nFinish fit-12 test\n")
+        print("\nFinish pred-5 test\n")
+        self.logger.debug("\nFinish pred-5 test\n")
 
-if __name__ == '__main__':
+2if __name__ == '__main__':
     unittest.main()

@@ -23,23 +23,15 @@ class linear_regression:
         self.learning_rate = learning_rate
         self.epochs = epochs
 
-    def fit(self, x_train: [np.ndarray],
-            y_train: [np.ndarray],
-            mode: [int],
-            slope: [int] = 1,
-            intercept: [int] = 1,
-            learning_rate: [float] = 0.0001,
-            epochs: [int] = 100000):
+    def fit(self, x_train: [np.ndarray[np.float64]],
+            y_train: [np.ndarray[np.float64]],
+            mode: [int]):
 
         """fit the data using linear regression model
             Parameters:
             x_train (list, tuple): training input,
             y_train (list, tuple): training ouput,
             mode (int, float): mode of training (DEBUG of INFO),
-            slope (int, float): initial value of slope, (Default slope = 1)
-            intercept (int, float): initial value of intercept, (Default intercept = 1)
-            leaning_rate (int, float): learning_rate, (Default learning_rate = 0.00001)
-            epochs (int, float): no.of time repeat the fit process (Default epochs = 100000)
             Returns:
             if mode is DEBUG
                 Returning int: new slope, int: new intercept, list: loss history, list: slope history, list: intercept history
@@ -47,19 +39,10 @@ class linear_regression:
                 Returning int: new slope, int: new intercept
         """
 
-        self.slope = slope
-        self.intercept = intercept
-        self.learning_rate = learning_rate
-        self.epochs = epochs
-
         # assert checking
-        assert type(x_train) in [list, tuple, np.ndarray]
-        assert type(y_train) in [list, tuple, np.ndarray]
+        assert type(x_train) in [list[float], tuple[float], np.ndarray[np.float64]]
+        assert type(y_train) in [list[float], tuple[float], np.ndarray[np.float64]]
         assert type(mode) in [int, float]
-        assert type(slope) in [int, float]
-        assert type(intercept) in [int, float]
-        assert type(learning_rate) in [int, float]
-        assert type(epochs) in [int, float]
 
         try:
 
@@ -73,6 +56,7 @@ class linear_regression:
                 single_epoch_losses = []
 
                 for x, y in zip(x_train, y_train):
+
                     # y = (m * x) + c - linear eqation
                     y_pred = (self.slope * x) + self.intercept
 
@@ -107,30 +91,23 @@ class linear_regression:
         except ValueError:
             print("please check your fit parameters and try again")
 
-    def pred(self, x_test: [np.ndarray],
-             slope: [int],
-             intercept: [int]):
+    def pred(self, x_test: [np.ndarray[np.float64]]):
 
         """predict the data using linear regression model with updated slope and intercept
             Parameters:
             x_test (list, tuple): training input,
-            slope (int, float): updated slope
-            intercept (int, float): updated intercept
             Returns:
             [list,tuple]:Returning y_predicted
         """
-
         # assert checking
-        assert type(x_test) in [list, tuple, np.ndarray]
-        assert type(slope) in [int, float]
-        assert type(intercept) in [int, float]
+        assert type(x_test) in [list[float], tuple[float], np.ndarray[np.float64]]
 
         try:
             y_hat_pred = []
 
             for xt in x_test:
 
-                y_hat = (slope * xt) + intercept
+                y_hat = (self.slope * xt) + self.intercept
                 y_hat_pred.append(y_hat)
 
             return y_hat_pred

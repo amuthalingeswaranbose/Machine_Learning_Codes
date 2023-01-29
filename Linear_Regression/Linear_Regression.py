@@ -92,12 +92,12 @@ class linear_regression:
     def pred(self, x_test):
 
         """
-            read x_test
-            apply linear regression, and find y_predicted with updated new slope and intercept
-            return the y_predicted
+        read x_test
+        apply linear regression, and find y_predicted with updated new slope and intercept
+        return the y_predicted
 
-            : param: x_test,
-            : return: y_predicted
+        : param: x_test,
+        : return: y_predicted
         """
 
         # assert checking

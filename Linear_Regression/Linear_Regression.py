@@ -1,22 +1,21 @@
-try:
-    import logging
-    import numpy as np
-
-except ImportError:
-    print("please install required packages for import(numpy)...")
+import logging
+import numpy as np
 
 class linear_regression:
     """
     linear regression class with fit, pred methods
     """
 
-    def __init__(self, slope=1, intercept=1, learning_rate=0.00001, epochs=100000):
+    def __init__(self, slope: [int] = 1,
+                 intercept: [int] = 1,
+                 learning_rate: [float] = 0.00001,
+                 epochs: [int] = 100000):
 
         # assert checking
-        assert type(slope) == type(1.0) or type(slope) == type(1)
-        assert type(intercept) == type(1.0) or type(intercept) == type(1)
-        assert type(learning_rate) == type(1.0) or type(learning_rate) == type(1)
-        assert type(epochs) == type(1.0) or type(epochs) == type(1)
+        assert type(slope) in [int, float]
+        assert type(intercept) in [int, float]
+        assert type(learning_rate) in [int, float]
+        assert type(epochs) in [int, float]
 
         # initialize
         self.slope = slope
@@ -24,24 +23,43 @@ class linear_regression:
         self.learning_rate = learning_rate
         self.epochs = epochs
 
-    def fit(self, x_train, y_train, mode=10):
-        """
-        read x_train, y_train and mode(DEBUg - return 5 paramertes , INFO - returns 2 parameters).
-        apply linear regression, if the y_pred have huge difference from y_actal we need to update the sloper and intercept.
-        updation of slope requires derivative of slope, learning_rate and slope
-        updation of intercept requires derivative of intercept, learning_rate and intercept
-        repeat the process with difference epochs and leaning_rates, if the expected slope and intercept we will reach
+    def fit(self, x_train: [np.ndarray],
+            y_train: [np.ndarray],
+            mode: [int],
+            slope: [int] = 1,
+            intercept: [int] = 1,
+            learning_rate: [float] = 0.0001,
+            epochs: [int] = 100000):
 
-        : param: x_train,
-        : param: y_train,
-        : param: mode
-        : return: slope, intercept, loss_history, slope_history, intercept_history
+        """fit the data using linear regression model
+            Parameters:
+            x_train (list, tuple): training input,
+            y_train (list, tuple): training ouput,
+            mode (int, float): mode of training (DEBUG of INFO),
+            slope (int, float): initial value of slope, (Default slope = 1)
+            intercept (int, float): initial value of intercept, (Default intercept = 1)
+            leaning_rate (int, float): learning_rate, (Default learning_rate = 0.00001)
+            epochs (int, float): no.of time repeat the fit process (Default epochs = 100000)
+            Returns:
+            if mode is DEBUG
+                Returning int: new slope, int: new intercept, list: loss history, list: slope history, list: intercept history
+            else
+                Returning int: new slope, int: new intercept
         """
+
+        self.slope = slope
+        self.intercept = intercept
+        self.learning_rate = learning_rate
+        self.epochs = epochs
 
         # assert checking
-        assert type(x_train) == type([]) or type(x_train) == type(()) or type(np.array([]))
-        assert type(y_train) == type([]) or type(y_train) == type(()) or type(np.array([]))
-        assert type(mode) == type(1)
+        assert type(x_train) in [list, tuple, np.ndarray]
+        assert type(y_train) in [list, tuple, np.ndarray]
+        assert type(mode) in [int, float]
+        assert type(slope) in [int, float]
+        assert type(intercept) in [int, float]
+        assert type(learning_rate) in [int, float]
+        assert type(epochs) in [int, float]
 
         try:
 
@@ -89,26 +107,30 @@ class linear_regression:
         except ValueError:
             print("please check your fit parameters and try again")
 
-    def pred(self, x_test):
+    def pred(self, x_test: [np.ndarray],
+             slope: [int],
+             intercept: [int]):
 
-        """
-        read x_test
-        apply linear regression, and find y_predicted with updated new slope and intercept
-        return the y_predicted
-
-        : param: x_test,
-        : return: y_predicted
+        """predict the data using linear regression model with updated slope and intercept
+            Parameters:
+            x_test (list, tuple): training input,
+            slope (int, float): updated slope
+            intercept (int, float): updated intercept
+            Returns:
+            [list,tuple]:Returning y_predicted
         """
 
         # assert checking
-        assert type(x_test) == type([]) or type(x_test) == type(()) or type(np.array([]))
+        assert type(x_test) in [list, tuple, np.ndarray]
+        assert type(slope) in [int, float]
+        assert type(intercept) in [int, float]
 
         try:
             y_hat_pred = []
 
             for xt in x_test:
-                y_hat = (self.slope * xt) + self.intercept
 
+                y_hat = (slope * xt) + intercept
                 y_hat_pred.append(y_hat)
 
             return y_hat_pred

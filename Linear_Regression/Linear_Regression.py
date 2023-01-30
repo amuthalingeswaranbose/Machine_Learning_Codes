@@ -1,15 +1,16 @@
 import logging
 import numpy as np
+import numpy.typing as npt
 
 class linear_regression:
     """
     linear regression class with fit, pred methods
     """
 
-    def __init__(self, slope: [int] = 1,
-                 intercept: [int] = 1,
-                 learning_rate: [float] = 0.00001,
-                 epochs: [int] = 100000):
+    def __init__(self, slope: int = 1,
+                 intercept: int = 1,
+                 learning_rate: float = 0.00001,
+                 epochs: int = 100000):
 
         # assert checking
         assert type(slope) in [int, float]
@@ -23,9 +24,7 @@ class linear_regression:
         self.learning_rate = learning_rate
         self.epochs = epochs
 
-    def fit(self, x_train: [np.ndarray[np.float64]],
-            y_train: [np.ndarray[np.float64]],
-            mode: [int]):
+    def fit(self, x_train: np.ndarray, y_train: np.ndarray, mode: int):
 
         """fit the data using linear regression model
             Parameters:
@@ -40,8 +39,9 @@ class linear_regression:
         """
 
         # assert checking
-        assert type(x_train) in [list[float], tuple[float], np.ndarray[np.float64]]
-        assert type(y_train) in [list[float], tuple[float], np.ndarray[np.float64]]
+        assert type(x_train) in [list[float], tuple[float], np.ndarray]
+        assert type(y_train) in [list[float], tuple[float], np.ndarray]
+        #assert type(y_train) in [list[float], tuple[float], npt.NDArray[np.float64]]
         assert type(mode) in [int, float]
 
         try:
@@ -91,7 +91,7 @@ class linear_regression:
         except ValueError:
             print("please check your fit parameters and try again")
 
-    def pred(self, x_test: [np.ndarray[np.float64]]):
+    def pred(self, x_test: np.ndarray):
 
         """predict the data using linear regression model with updated slope and intercept
             Parameters:
@@ -100,7 +100,7 @@ class linear_regression:
             [list,tuple]:Returning y_predicted
         """
         # assert checking
-        assert type(x_test) in [list[float], tuple[float], np.ndarray[np.float64]]
+        assert type(x_test) in [list[float], tuple[float], np.ndarray]
 
         try:
             y_hat_pred = []

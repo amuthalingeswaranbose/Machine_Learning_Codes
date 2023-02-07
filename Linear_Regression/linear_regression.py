@@ -29,7 +29,6 @@ class linear_regression:
         self.learning_rate = learning_rate
         self.epochs = epochs
 
-    #def fit(self, x_train: np.ndarray, y_train: np.ndarray, mode: int):
     def fit(self, x_train: [list, tuple, np.ndarray], y_train: [list, tuple, np.ndarray], mode: int):
 
         """fit the data using linear regression model
@@ -45,9 +44,6 @@ class linear_regression:
         """
 
         # assert checking
-        #assert type(x_train) in [list[int], tuple[int], list[float], tuple[float], np.ndarray]
-        #assert type(y_train) in [list[int], tuple[int], list[float], tuple[float], np.ndarray]
-
         assert ((isinstance(x_train, list) and all(isinstance(item, int) for item in x_train)) or
                 (isinstance(x_train, list) and all(isinstance(item, float) for item in x_train)) or
                 (isinstance(x_train, tuple) and all(isinstance(item, int) for item in x_train)) or
@@ -115,8 +111,6 @@ class linear_regression:
             [list,tuple]:Returning y_predicted
         """
         # assert checking
-        #assert type(x_test) in [list[int], tuple[int], list[float], tuple[float], np.ndarray]
-
         assert ((isinstance(x_test, list) and all(isinstance(item, int) for item in x_test)) or
                 (isinstance(x_test, list) and all(isinstance(item, float) for item in x_test)) or
                 (isinstance(x_test, tuple) and all(isinstance(item, int) for item in x_test)) or
